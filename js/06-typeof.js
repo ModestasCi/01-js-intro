@@ -3,7 +3,7 @@
 */
 
 const n = NaN; // yra number (999, -999)
-const s = ''; // string (belekoks tekstas)
+const s = ""; // string (belekoks tekstas)
 const b = false; // boolean
 
 const nType = typeof n;
@@ -21,9 +21,9 @@ console.log(typeof 3.14);
 console.log(typeof Infinity);
 console.log(typeof -Infinity);
 console.log(typeof NaN);
-console.log(typeof '');
-console.log(typeof 'a');
-console.log(typeof 'aewaertrhyfg');
+console.log(typeof "");
+console.log(typeof "a");
+console.log(typeof "aewaertrhyfg");
 console.log(typeof true);
 console.log(typeof false);
 
@@ -35,9 +35,16 @@ console.log(marks, marksType);
 console.log(typeof []);
 console.log(typeof [1]);
 console.log(typeof [1, -8]);
-console.log(typeof ['']);
-console.log(typeof ['', 'dewfd']);
-console.log(typeof ['', true, 5]);
+console.log(typeof [""]);
+console.log(typeof ["", "dewfd"]);
+console.log(typeof ["", true, 5]);
 
 console.log({}, typeof {});
 console.log({ age: 99 }, typeof { age: 99 });
+
+console.log("---------------");
+// const x = '' + 5;     /** rodys string del kabuciu
+const x = 5; /** rodys number(obvious) */
+console.log(typeof x);
+const y = typeof "" + 5; /** rodys string5 */
+console.log(y);

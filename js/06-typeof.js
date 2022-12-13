@@ -46,5 +46,5 @@ console.log("---------------");
 // const x = '' + 5;     /** rodys string del kabuciu
 const x = 5; /** rodys number(obvious) */
 console.log(typeof x);
-const y = typeof "" + 5; /** rodys string5 */
+const y = typeof '' + 5; /** rodys string5 */
 console.log(y);

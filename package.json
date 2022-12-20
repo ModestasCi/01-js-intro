@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "reverseString": "nodemon ./tasks/reverseString.js",
     "rageSum": "nodemon ./tasks/rageSum.js",
     "zeroFuel": "nodemon ./codewars/zeroFuel.js",
     "shop": "nodemon ./tasks/shop.js",

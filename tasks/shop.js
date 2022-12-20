@@ -1,39 +1,46 @@
 console.clear();
 
-const currency = "EUR";
-const goods = [
-    {
-        name: "Bananas",
-        price: 2,
-        inStock: 10,
-    },
-    {
-        name: "Agurkas",
-        price: 3,
-        inStock: 10,
-    },
-    {
-        name: "Pomidoras",
-        price: 1.57,
-        inStock: 30,
-    },
+const valiuta = "EUR";
+const prekes = [
+	{
+		name: "Bananas",
+		price: 2,
+		inStock: 10,
+	},
+	{
+		name: "Agurkas",
+		price: 3,
+		inStock: 10,
+	},
+	{
+		name: "Pomidoras",
+		price: 1.57,
+		inStock: 30,
+	},
+	{
+		name: "Arbuzas",
+		price: 1,
+		inStock: 0,
+	},
 ];
 
-function shop(goods, currency) {
-    console.log("MUSU PARDUOTUVE:");
-    console.log(" ---------------");
-
-    let totalPrice = 0;
-    for (let i = 0; i < goods.length; i++) {
-        console.log(`${goods[i].name} kainuoja ${goods[i].price.toFixed(2)} ${currency} ir turime ju ${goods[i].inStock} vienetu.`);
-        totalPrice += goods[i].price * goods[i].inStock;
-    }
-
-    console.log("---------------");
-    console.log(`Viso asortimento kaina: ${totalPrice.toFixed(2)} ${currency}.`);
+function shop(products, currency) {
+	console.log("Musu parduotuve:");
+	console.log("----------------");
+	let fullPrice = 0;
+	for (let i = 0; i < products.length; i++) {
+		console.log(
+			`${i + 1}) ${products[i].name} kainuoja ${
+				products[i].price
+			} ${currency} ir turime ju ${products[i].inStock} vienetu`
+		);
+		fullPrice += products[i].price * products[i].inStock;
+	}
+	console.log("----------------");
+	console.log(`Viso asortimento kaina: ${fullPrice} ${currency}`);
 }
 
-shop(goods, currency);
+shop(prekes, valiuta);
 
 // MUSU PARDUOTUVE:
 // ----------------

@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "zeroFuel": "nodemon ./codewars/zeroFuel.js",
     "shop": "nodemon ./tasks/shop.js",
+=======
+        "shop": "nodemon ./tasks/shop.js",
+>>>>>>> 8fcd174457221b3f98b99d74d6f4506c201109f1
     "for": "nodemon ./js/10-for.js",
     "if": "nodemon ./js/09-if.js",
     "function": "nodemon ./js/08-function.js",

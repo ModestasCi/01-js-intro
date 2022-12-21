@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "spread": "nodemon ./js/14-spread.js",
     "arrow": "nodemon ./js/13-arrow.js",
     "stringMethod": "nodemon ./js/12-string-method.js",
     "ternary": "nodemon ./js/11-ternary.js",

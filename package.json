@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "spregrfad": "nodemon ./js/17-spreffad.js",
+    "loops": "nodemon ./js/16-loops.js",
+    "rest": "nodemon ./js/15-rest.js",
     "spread": "nodemon ./js/14-spread.js",
     "arrow": "nodemon ./js/13-arrow.js",
     "stringMethod": "nodemon ./js/12-string-method.js",

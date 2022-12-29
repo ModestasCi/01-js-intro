@@ -90,7 +90,8 @@ const onlyMarriedCount = students.filter((s) => s.isMarried).length;
 console.log(onlyMarriedCount);
 
 /** uzduotis. tik vedusiu studentu vardai
- * sis kodas dvigubai efektyvesnis, greiciau veikiantis, maziau atminties vartojantis nei 82-86eil.*/
+ * sis kodas dvigubai efektyvesnis, greiciau veikiantis, maziau atminties vartojantis nei
+ * 82-86eil. nes maziau ciklu reikia, siuo atveju tik 1ciklas*/
 const onlyFans = [];
 for (const student of students) {
 	if (student.isMarried && student.age >= 18) {

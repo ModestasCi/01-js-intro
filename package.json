@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "spregrfad": "nodemon ./js/17-spreffad.js",
+    "reduce": "nodemon ./js/20-reduce.js",
+    "sort": "nodemon ./js/19-sort.js",
+    "filter": "nodemon ./js/18-filter.js",
+    "map": "nodemon ./js/17-map.js",
     "loops": "nodemon ./js/16-loops.js",
     "rest": "nodemon ./js/15-rest.js",
     "spread": "nodemon ./js/14-spread.js",

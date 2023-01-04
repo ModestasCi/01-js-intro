@@ -32,28 +32,31 @@
 // savo duomenimis elgiasi taip kaip nori ir eksportuoja tai ka leidzia)
 
 class Student { /** class Math jei yra poreikis */
-	#name = "";
-	#birthYear = 0;
+	#name = ''; /** =""; vietoj =vardas; -jei sakykim paekistas vardas buvs */
+	#birthYear = 0; /**sias 5 eilutes rasyt kai # naudojama */
 	#isMarried = false;
 	#shoes = 40;
 	#marks = [];
 
-	constructor() {
-		this.#name = "Petras"; /** šiose  eilutese apsirašom kintamuosius kaip this#name ir t.t.; */
-		this.#birthYear = 0; /** # galima nenaudoti, jei apsaugos nereik */
+	constructor() { /** buvo (vardas, gimimoMetai) */
+		this.#name = 'Petras'; /**buvo = vardas; šiose  eilutese apsirašom kintamuosius kaip this#name ir t.t.; */
+		this.#birthYear = 0; /** buvo = gimimoMetai; # galima nenaudoti, jei apsaugos nereik . # pavercia privaciu. destytojas beveik neneuadoja*/
 		this.#isMarried = false;
 		this.#shoes = 40;
 		this.#marks = [];
 	}
 /** Normalūs mums uprantami kintamieji classIŲ ribose, yra pasiekiami tik to konkretaus metodo viduje  */
-	// getName() { /** updateName(name) */
-	// 	return this.#name; /**{this.name=name;} */
-	// }
-	getName() {
-		return this.#name;
+	getName() { /** updateName(name) */
+		return this.#name; /**{this.name=name;} */
 	}
+	// check() {
+	// 	if () { /** ()<--irasyti patikrinimo salygas */
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 
-	isValidMark(mark) {
+	isValidMark(mark) { /** isValid(mark-klausia ar pazymys validus) */
 		if (
 			typeof mark !== "number" 
 			|| !isFinite(mark) /** jei ne baigtinis skaicius */
@@ -64,23 +67,23 @@ class Student { /** class Math jei yra poreikis */
 			return false;
 		}
 		return true;
-	}
+	}	
 
 	// Metodas(ale kaip funkcija), itraukiant nauja pazymi
 	addMark(mark) { /**priskiriu šiam kontekstui parametrą (mark).  */
 // 		console.log(mark, this.name, this.marks); /**mark-terminal spaudzia ivestus duomenis is index addMark.
 // siame kontekste this reprezentuoja VISA šį konkretų studenta(kazkada petra, kazkada ona, maryte ir t.t.).
 // Ale cloud(debesy) esanti studenta, bet viena nekonkretu. Su this.keywordAI patampa veikiantis*/
-		if (!this.isValidMark(mark)) { /** if (typeof mark !== 'number' || !isInfinite(mark) || mark < 1 || mark > 10 || msrk %1 !== 0) */
-			return "ERROR";
+		if (!this.isValidMark(mark)) { /** if (typeof mark !== 'number' || !isInfinite(mark) || mark < 1 || mark > 10 || msrk %1 !== 0). !this.isValid(mark)-klausia ar nevalidus pazymys */
+			return "ERROR"; /** alternatyva virsutiniam komentarui if(mark<1||mark>10||isNan(mark)||mark %1!==0) */
 		}
 		this.#marks.push(mark); /** this.marks.push(mark); kreipiamiames i studento pazymiu masyva (this.marks) ir Į .pushINAMAS(mark(gautaspažymys));. */
 		return "OK";
 	}
 
-	addMarks(...marks) {
+	addMarks(...marks) { /** iskviecia is index.js add.marks masyva */
 		for (const mark of marks) {
-			if (!this.isValidMark(mark)) {
+			if (!this.isValidMark(mark)) { /** cia pakeista kaip ir marksAverage1 pavyzdyje */
 				continue;
 			}
 			this.#marks.push(mark);
@@ -88,8 +91,7 @@ class Student { /** class Math jei yra poreikis */
 	}
 
 /** reduce.analogiskas metodas ant masyvo . Metodas itraukiant nauja pazimi
- * patikrinu ar normalus dalykas su sia funkcija
-*/
+ * patikrinu ar normalus dalykas su sia funkcija*/
 	marksAverage() { /**info iš išorės nereikia,nes manipuliuos vidine info Čia */
 		if (this.#marks.length === 0) { /** this.marks.reduce((t,m) => t + m, 0) / this.mark.length; nesvarbu, ka returnINSI.ifUS naudoja,jei nori atpažinti specifinius atvejus  */
 			return "neiskaita"; /** jei nera pazymiu */
@@ -118,7 +120,7 @@ class Student { /** class Math jei yra poreikis */
 		let sum = 0;
 		let correct = 0;
 		for (const mark of this.marks) {
-			if (this.isValidMark(mark)) {
+			if (this.isValidMark(mark)) { /**pakeistas visur kur kartojosi auksciau */
 				sum += mark;
 				correct++;
 			}

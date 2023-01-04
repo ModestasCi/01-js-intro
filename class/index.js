@@ -28,7 +28,7 @@ Atitinkama aliuzija/palyginimas,kad i class reiketu ziureti kaip i receptūrą :
 kaip pagaminti,kaip pagaminus turi veikti/atrodyti.perskaicius recepta(recepto nesuvalgysi)/brezini(nepastatysi).
 Tai kas gaminama,kas veikia(blynas/lektuvas etc) yra objektas.*/
 
-const petras = new Student('Petras', 2001);/**-pirmas objektas-->(terminale isspausdina)Student {}.Tas pats kas console.log({});. Del nutylejimo salygos istrinam true.
+const petras = new Student();/**-pirmas objektas-->(terminale isspausdina)Student {}.Tas pats kas console.log({});. Del nutylejimo salygos istrinam true.
 ---{} <-riestiniai skliaustai nurodo kad tai objektas. Logikos blokas.
 ---Student <-sugalvotas logiškas mano classĖS pavadinimas atitinkamai duomenų kontekstui.Nurodo kokio tipo objektas.
 ---new Student() <-instrukcija kaip kurti dalyka kuris vadinasi Student. Kiekvieno Student 
@@ -42,6 +42,9 @@ Esant poreikiui Student i Studentas, kai yra verciama kalba is UK i LT (gali ir 
 const petras = new x.Student('Petras', 1990); <-kai iš visko daug, kad neieskot istraukiam norima reiksme.
 ---const chuck = new Teacher('Chuck', 1980); <-jei norima iš Student.js importuoti du objectUS*/
 
+// petras.check(); /** alternatyvus patikrinimo budas */
+
+// petras.updateName('Petras'); /** atnaujinimas duomenu per metoda */
 petras.addMarks(10, 0, 2, 22);
 petras.addMark(9); /**addMark-logikos gabalas, kuri reikia paleisti su() */
 petras.addMark(5); /** 8-9 cia ranka ivesti duomenys. kiekvienas priskirtas metodas dabar dirbs su konkreciu studentu(sabloniskai) */
@@ -51,11 +54,13 @@ petras.addMark(3.14);
 petras.addMark(-3.14);
 petras.addMark(0);
 petras.addMark(NaN);
-petras.marks = [10];
 
-console.log(petras.name, petras.getName());
+petras.marks = [10]; /**overridina mayva(10,0,2,22) */
+
+console.log(petras.getName()); /** nebegali pasiekti siu privaciu reiksmiu kai yra petras.name. Kad pasiekti naudojam petras.getName()*/
 console.log(petras.marks);
 console.log(petras.marksAverage());
+// console.log(petras.marksAverage1());
 
 // console.log(petras); <-nereikalingi tolimesniam kodui.
 /**console.log(chuck); <-kai importuojami du(ar daugiau) objectAi(ar const ir t.t.) iš Student.js
